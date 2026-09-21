@@ -24,8 +24,8 @@ def hello_http(request):
     try:
         storage_client = storage.Client()
         buckets = list(storage_client.list_buckets())
-        output.append(f"Storage call: SUCCESS - found {len(buckets)} buckets")
+        output.append(f"Storage call: SUCCESS - found {len(buckets)} buckets!!!!")
     except Exception as e:
-        output.append(f"Storage call: FAILED - {e}")
+        output.append(f"Storage call: FAILED - {e}!!!!")
 
     return "\n".join(output)
