@@ -16,9 +16,9 @@ def hello_http(request):
         )
         builds = client.list_builds(request=request)
         list(builds)
-        output.append("Cloud Build call: SUCCESS!")
+        output.append("Cloud Build call: SUCCESS!!!!")
     except Exception as e:
-        output.append(f"Cloud Build call: FAILED! - {e}")
+        output.append(f"Cloud Build call: FAILED!!!! - {e}")
 
     # Test 2: Cloud Storage permission (should FAIL - test-sa has no storage role)
     try:
