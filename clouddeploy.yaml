@@ -1,0 +1,17 @@
+apiVersion: deploy.cloud.google.com/v1
+kind: Target
+metadata:
+  name: perms-learn-prod
+description: perms-learn production
+requireApproval: true
+run:
+  location: projects/my-generic-project-504019/locations/us-central1
+---
+apiVersion: deploy.cloud.google.com/v1
+kind: DeliveryPipeline
+metadata:
+  name: perms-learn-pipeline
+description: Build then approve before deploy
+serialPipeline:
+  stages:
+    - targetId: perms-learn-prod
