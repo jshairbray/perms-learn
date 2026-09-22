@@ -16,16 +16,16 @@ def hello_http(request):
         )
         builds = client.list_builds(request=request)
         list(builds)
-        output.append("Cloud Build call: SUCCESSFUL!!!!")
+        output.append("Cloud Build call: SUCCESSFULLY!!!!")
     except Exception as e:
-        output.append(f"Cloud Build call: FAILED!!!! - {e}")
+        output.append(f"Cloud Build call: FAIL!!!! - {e}")
 
     # Test 2: Cloud Storage permission (should FAIL - test-sa has no storage role)
     try:
         storage_client = storage.Client()
         buckets = list(storage_client.list_buckets())
-        output.append(f"Storage call: SUCCESSFUL - found {len(buckets)} buckets!!!!")
+        output.append(f"Storage call: SUCCESSFULLY - found {len(buckets)} buckets!!!!")
     except Exception as e:
-        output.append(f"Storage call: FAILED - {e}!!!!")
+        output.append(f"Storage call: FAIL!!!! - {e}!!!!")
 
     return "\n".join(output)

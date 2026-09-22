@@ -51,7 +51,7 @@ spec:
           tcpSocket:
             port: 8080
           timeoutSeconds: 240
-      serviceAccountName: perms-learn-build-sa@my-generic-project-504019.iam.gserviceaccount.com
+      serviceAccountName:  perm-learn-cloudrun-sa@my-generic-project-504019.iam.gserviceaccount.com
       timeoutSeconds: 300
   traffic:
   - latestRevision: true
