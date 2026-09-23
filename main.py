@@ -16,7 +16,7 @@ def hello_http(request):
         )
         builds = client.list_builds(request=request)
         list(builds)
-        output.append("Cloud Build call: SUCCESS YAHOO")
+        output.append("Cloud Build call: SUCCESS BING")
     except Exception as e:
         output.append(f"Cloud Build call: FAIL!!!! - {e}")
 
@@ -24,7 +24,7 @@ def hello_http(request):
     try:
         storage_client = storage.Client()
         buckets = list(storage_client.list_buckets())
-        output.append(f"Storage call: SUCCESS YAHOO - found {len(buckets)} buckets")
+        output.append(f"Storage call: SUCCESS BING - found {len(buckets)} buckets")
     except Exception as e:
         output.append(f"Storage call: FAIL!!!! - {e}!!!!")
 
